@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import apiKeys from '../apiKeys';
 
-const firebaseUrl = apiKeys.firebaseKeys.databaseURL;
+const firebaseUrl = apiKeys.almondKeys.databaseURL;
 
 const getEventsByUid = uid => new Promise((resolve, reject) => {
   axios.get(`${firebaseUrl}/events.json?orderBy="uid"&equalTo="${uid}"`)
@@ -17,4 +17,6 @@ const getEventsByUid = uid => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
-export default { getEventsByUid };
+const deleteEvent = eventId => axios.delete(`${firebaseUrl}/events/${eventId}.json`);
+
+export default { getEventsByUid, deleteEvent };
