@@ -1,4 +1,3 @@
-
 import firebase from 'firebase/app';
 
 import eventsData from '../helpers/Data/eventsData';
@@ -8,12 +7,19 @@ import util from '../helpers/util';
 
 const deleteEventsEvent = (e) => {
   const eventId = e.target.id;
-  eventsData.eventsData(eventId)
+  eventsData.deleteEvent(eventId)
     .then(() => (firebase.auth().currentUser.uid))
     .catch(err => console.error('no-deletion', err));
 };
 
-const createEvents = () => {
+const addDelete = () => {
+  const buttonDelete = document.getElementsByClassName('delete-button');
+  for (let i = 0; i < buttonDelete.length; i += 1) {
+    buttonDelete[i].addEventListener('click', deleteEventsEvent);
+  }
+};
+
+const displayEvents = () => {
   let domString = '';
 
   domString += '<div class="card">';
@@ -27,12 +33,30 @@ const createEvents = () => {
   domString += '</div>';
   domString += '</div>';
   util.printToDom('my-events', domString);
-  document.getElementsByClassName('delete-button').addEventListener('click', deleteEventsEvent);
+  addDelete();
+};
+
+const addEventsDomStringBuilder = () => {
+  let domString = '';
+
+  domString += '<form>';
+  domString += '<div class="form-group">';
+  domString += '<label for="exampleFormControlInput1">Email address</label>';
+  domString += '<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">';
+  domString += '</div>';
+  domString += '<div class="form-group">';
+  domString += '<label for="exampleFormControlTextarea1">Example textarea</label>';
+  domString += '<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>';
+  domString += '<div class="btn btn-danger delete-button">Delete</div>';
+  domString += '</div>';
+  domString += '</form>';
+  util.printToDom('create-events', domString);
 };
 
 const initEvents = () => {
   eventsData.getEventsByUid();
-  createEvents();
+  displayEvents();
+  addEventsDomStringBuilder();
 };
 
 initEvents();
