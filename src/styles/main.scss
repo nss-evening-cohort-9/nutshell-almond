@@ -1,3 +1,11 @@
+@import "~bootstrap/scss/bootstrap";
+
 body {
-  background-color: blue;
+  background-color: lightgrey;
+}
+
+#signup-login {
+  border: 1px solid black;
+  height: 300px;
+  width: 300px;
 }
