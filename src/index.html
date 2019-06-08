@@ -16,7 +16,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Diary<span class="sr-only">(current)</span></a>
+            <a id="navbar-button-auth" class="nav-link">Authentication</a>
+        </li>
+          <a id ="navbar-button-"class="nav-link" href="#">Diary<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Events</a>
@@ -24,11 +26,15 @@
         <li class="nav-item">
           <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">News</a>
         </li>
+        <li class="nav-item">
+            <a id="navbar-button-logout" class="nav-link hide">Logout</a>
+        </li>
       </ul>
     </div>
   </nav>
+  <div id="auth"></div>
 
-  <div id="home">
+  <div id="home" class="hide">
     <div id="diary" class="btn btn-primary">Diary</div>
     <div id="events" class="btn btn-primary">Events</div>
     <div id="news" class="btn btn-primary">News</div>
