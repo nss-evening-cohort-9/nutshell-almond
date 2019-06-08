@@ -3,72 +3,72 @@
     "entry":"sean1",
     "title": "memory",
     "date": "06/07/2019",
-    "uid": "23345"
+    "uid": "H4CURsIMQPgrgNlYpZfhalXRfpj2"
   },
   "diary2": {
     "entry":"lwam1",
     "title": "MyDay",
     "date": "06/02/2019",
-     "uid": "12345"
+     "uid": "HoZ7KiECFPRDaYWNV0vktFPTsjj1"
   },
   "diary3": {
-    "entry":"mat1",
+    "entry":"matt1",
     "title": "eat",
     "date": "06/15/2019",
-     "uid": "67890"
+     "uid": "ZMEO8wBJs9VHt9MjSrOJGCsLscu2"
   },
   "diary4": {
     "entry":"Zoe1",
     "title": "memory",
     "date": "05/17/2019",
-    "uid": "23345"
+    "uid": "vupmouziEOUBRVQijmpFriLLzGo2"
   },
   "diary5": {
     "entry":"lwam2",
     "title": "MyDay",
     "date": "06/12/2019",
-     "uid": "12345"
+     "uid": "HoZ7KiECFPRDaYWNV0vktFPTsjj1"
   },
   "diary6": {
-    "entry":"mat2",
+    "entry":"matt2",
     "title": "eat",
     "date": "05/15/2019",
-     "uid": "67890"
+     "uid": "ZMEO8wBJs9VHt9MjSrOJGCsLscu2"
   },
   "diary7": {
     "entry":"sean2",
     "title": "memory",
     "date": "05/27/2019",
-    "uid": "23345"
+    "uid": "H4CURsIMQPgrgNlYpZfhalXRfpj2"
   },
   "diary8": {
     "entry":"zoe2",
     "title": "MyDay",
     "date": "06/22/2019",
-     "uid": "12345"
+     "uid": "vupmouziEOUBRVQijmpFriLLzGo2"
   },
   "diary9": {
-    "entry":"mat3",
+    "entry":"matt3",
     "title": "eat",
     "date": "06/23/2019",
-     "uid": "67890"
+     "uid": "ZMEO8wBJs9VHt9MjSrOJGCsLscu2"
   },
   "diary10": {
     "entry":"sean3",
     "title": "memory",
     "date": "06/30/2019",
-    "uid": "23345"
+    "uid": "H4CURsIMQPgrgNlYpZfhalXRfpj2"
   },
   "diary11": {
     "entry":"lwam3",
     "title": "MyDay",
     "date": "06/28/2019",
-     "uid": "12345"
+     "uid": "HoZ7KiECFPRDaYWNV0vktFPTsjj1"
   },
   "diary12": {
     "entry":"zoe3",
     "title": "eat",
     "date": "06/21/2019",
-     "uid": "67890"
+     "uid": "vupmouziEOUBRVQijmpFriLLzGo2"
   }
 }
