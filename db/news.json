@@ -1,0 +1,20 @@
+{
+  "news1": {
+    "id":"1",
+    "title": "UFOs are all around: Reg Presley and the Four Weddings crop circle connection",
+    "articleUrl": "https://www.telegraph.co.uk/music/artists/ufos-around-reg-presley-four-weddings-crop-circle-connection/",
+    "uid": "334456"
+  },
+  "news2": {
+    "id":"2",
+    "title": "On Kingdom Hearts' Enduring Legacy",
+    "articleUrl": "http://www.dorkly.com/post/87598/why-despite-everything-im-still-a-kingdom-hearts-fan",
+     "uid": "66558"
+  },
+  "news3": {
+    "id":"3",
+    "title": "5 Surprising Benefits Of Thinking You're About To Die",
+    "articleUrl": "https://www.cracked.com/blog/5-surprising-benefits-thinking-youre-about-to-die/",
+     "uid": "11223"
+  }
+}

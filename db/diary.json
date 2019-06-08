@@ -1,0 +1,23 @@
+{
+  "diary1": {
+    "id":"1",
+    "entry":"sean",
+    "title": "memory",
+    "date": "06/07/2019",
+    "uid": "23345"
+  },
+  "diary2": {
+    "id":"2",
+    "entry":"lwam",
+    "title": "MyDay",
+    "date": "06/02/2019",
+     "uid": "12345"
+  },
+  "diary3": {
+    "id":"3",
+    "entry":"mat",
+    "title": "eat",
+    "date": "06/15/2019",
+     "uid": "67890"
+  }
+}

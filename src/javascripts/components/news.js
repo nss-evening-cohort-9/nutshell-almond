@@ -1,6 +1,5 @@
 const initNews = () => {
 };
-console.error('news page');
 
 initNews();
 
