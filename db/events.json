@@ -1,100 +1,86 @@
 {
   "event1": {
-    
     "location":"starbucks",
     "description":"groupproject",
     "date": "05/07/2019",
     "uid": "24681",
-    "name": "lwam"
+    "name": "lwam1"
   },
   "event2": {
-   
     "location":"theater",
     "description":"movie",
     "date": "05/11/2019",
     "uid": "56789",
-    "name": "mat"
+    "name": "mat1"
    },
   "event3": {
-    
     "location":"restaurant",
     "description":"eat",
     "date": "06/08/2019",
     "uid": "29746",
-    "name": "sean"
+    "name": "sean1"
   },
   "event4": {
- 
     "location":"starbucks",
     "description":"groupproject",
     "date": "05/07/2019",
     "uid": "24681",
-    "name": "Zoe"
+    "name": "Zoe1"
   },
   "event5": {
-   
     "location":"theater",
     "description":"movie",
     "date": "05/11/2019",
     "uid": "56789",
-    "name": "mat"
+    "name": "mat2"
    },
   "event6": {
-    
     "location":"restaurant",
     "description":"eat",
     "date": "06/08/2019",
     "uid": "29746",
-    "name": "sean"
+    "name": "sean2"
   },
   "event7": {
-    
     "location":"starbucks",
     "description":"groupproject",
     "date": "05/07/2019",
     "uid": "24681",
-    "name": "lwam"
+    "name": "lwam2"
   },
   "event8": {
-   
     "location":"theater",
     "description":"movie",
     "date": "05/11/2019",
     "uid": "56789",
-    "name": "zoe"
+    "name": "zoe2"
    },
   "event9": {
-    
     "location":"restaurant",
     "description":"eat",
     "date": "06/08/2019",
     "uid": "29746",
-    "name": "sean"
+    "name": "sean3"
   },
   "event10": {
- 
     "location":"starbucks",
     "description":"groupproject",
     "date": "05/07/2019",
     "uid": "24681",
-    "name": "lwam"
+    "name": "lwam3"
   },
   "event11": {
-   
     "location":"theater",
     "description":"movie",
     "date": "05/11/2019",
     "uid": "56789",
-    "name": "mat"
+    "name": "mat3"
    },
   "event12": {
-    
     "location":"restaurant",
     "description":"pie",
     "date": "06/08/2019",
     "uid": "29746",
-    "name": "zoe"
+    "name": "zoe3"
   }
-
-
 }
