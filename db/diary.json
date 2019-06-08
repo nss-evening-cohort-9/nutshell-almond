@@ -1,84 +1,72 @@
 {
   "diary1": {
-   
-    "entry":"sean",
+    "entry":"sean1",
     "title": "memory",
     "date": "06/07/2019",
     "uid": "23345"
   },
   "diary2": {
-   
-    "entry":"lwam",
+    "entry":"lwam1",
     "title": "MyDay",
     "date": "06/02/2019",
      "uid": "12345"
   },
   "diary3": {
-    
-    "entry":"mat",
+    "entry":"mat1",
     "title": "eat",
     "date": "06/15/2019",
      "uid": "67890"
   },
   "diary4": {
-   
-    "entry":"Zoe",
+    "entry":"Zoe1",
     "title": "memory",
     "date": "05/17/2019",
     "uid": "23345"
   },
   "diary5": {
-   
-    "entry":"lwam",
+    "entry":"lwam2",
     "title": "MyDay",
     "date": "06/12/2019",
      "uid": "12345"
   },
   "diary6": {
-    
-    "entry":"mat",
+    "entry":"mat2",
     "title": "eat",
     "date": "05/15/2019",
      "uid": "67890"
   },
   "diary7": {
-   
-    "entry":"sean",
+    "entry":"sean2",
     "title": "memory",
     "date": "05/27/2019",
     "uid": "23345"
   },
   "diary8": {
-   
-    "entry":"zoe",
+    "entry":"zoe2",
     "title": "MyDay",
     "date": "06/22/2019",
      "uid": "12345"
   },
   "diary9": {
-    
-    "entry":"mat",
+    "entry":"mat3",
     "title": "eat",
     "date": "06/23/2019",
      "uid": "67890"
   },
   "diary10": {
-   
-    "entry":"sean",
+    "entry":"sean3",
     "title": "memory",
     "date": "06/30/2019",
     "uid": "23345"
   },
   "diary11": {
-   
-    "entry":"lwam",
+    "entry":"lwam3",
     "title": "MyDay",
     "date": "06/28/2019",
      "uid": "12345"
   },
   "diary12": {
-    
-    "entry":"zoe",
+    "entry":"zoe3",
     "title": "eat",
     "date": "06/21/2019",
      "uid": "67890"
