@@ -4,3 +4,4 @@ dist/
 build/
 src/javascripts/helpers/apiKeys.json
 .DS_Store
+.vscode
