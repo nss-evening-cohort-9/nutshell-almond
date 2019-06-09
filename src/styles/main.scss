@@ -2,10 +2,38 @@
 
 body {
   background-color: lightgrey;
+  margin: 5px;
 }
 
 #signup-login {
   border: 1px solid black;
   height: 300px;
   width: 300px;
+}
+
+.hide {
+  display: none;
+}
+
+.display-box {
+  border: 1px solid black;
+  padding: 13px;
+  margin-top: 57px;
+}
+
+.btn {
+  margin: 10px;
+  font-size: 14px;
+}
+
+nav {
+  margin: 0;
+}
+
+#events {
+  margin: 0 150px 0 150px;
+}
+
+h5 {
+  margin: 0;
 }
