@@ -8,14 +8,18 @@ import authData from './helpers/data/authData';
 
 import apiKeys from './helpers/apiKeys.json';
 
+import diarys from './components/diarys';
+
 import '../styles/main.scss';
 import 'bootstrap';
+
 
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);
   MyNavbar.navbarEvents();
   authData.checkLogInStatus();
   auth.domStringBuilder();
+  diarys.initDiary();
 
   document.getElementById('diary').addEventListener('click', () => {
     console.error('diary was clicked');
