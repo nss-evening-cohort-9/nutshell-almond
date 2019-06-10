@@ -24,7 +24,7 @@
         <a id="navbar-button-" class="nav-link" href="#">Diary<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Events</a>
+          <a class="nav-link" id="navbar-button-events" href="#">Events</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">News</a>
@@ -39,27 +39,25 @@
 
   <div id="home" class="hide">
 
-    <div class="guideButtons offset-4">
-      <div id="diaryButton" class="btn btn-primary">Diary</div>
-      <div id="eventsButton" class="btn btn-primary">Events</div>
-      <div id="newsButton" class="btn btn-primary">News</div>
+    <div class="guideButtons offset-3">
+      <button id="diaryButton" class="btn btn-primary">Diary</button>
+      <button id="eventsButton" class="btn btn-primary">Events</button>
+      <button id="newsButton" class="btn btn-primary">News</button>
     </div>
 
-    <div id="events">
-      <div class="row">
-        <div class="col-5 text-center display-box">
-          <h2 class="create">Create An Event</h2>
-          <div id="create-events"></div>
-        </div>
-        <div class="col-5 offset-2 display-box">
-          <h2 class="display text-center">My Events</h2>
-          <div id="my-events"></div>
-        </div>
-      </div>
-    </div>
 
   </div>
 
+  <div id="events">
+    <div class="row">
+      <div class="col-5 text-center ">
+        <div id="create-events" ></div>
+      </div>
+      <div class="col-5 offset-2 text-center">
+        <div id="my-events"></div>
+      </div>
+    </div>
+  </div>
 
 </body>
 

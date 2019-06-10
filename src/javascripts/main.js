@@ -18,17 +18,8 @@ const init = () => {
   MyNavbar.navbarEvents();
   authData.checkLogInStatus();
   auth.domStringBuilder();
-  events.initEvents();
 
-  document.getElementById('diary').addEventListener('click', () => {
-    console.error('diary was clicked');
-  });
-  document.getElementById('events').addEventListener('click', () => {
-    console.error('events was clicked');
-  });
-  document.getElementById('news').addEventListener('click', () => {
-    console.error('news was clicked');
-  });
+  document.getElementById('eventsButton').addEventListener('click', events.initEvents);
 };
 
 init();

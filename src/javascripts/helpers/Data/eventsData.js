@@ -13,11 +13,20 @@ const getEventsByUid = uid => new Promise((resolve, reject) => {
         eventResults[eventId].id = eventId;
         events.push(eventResults[eventId]);
       });
+      console.error(uid);
+      console.error(events);
       resolve(events);
     })
     .catch(err => reject(err));
 });
 
-const addNewEvents = myEvents => axios.post(`${firebaseUrl}/events.json`, myEvents);
+const addNewEvents = eventObject => axios.post(`${firebaseUrl}/events.json`, eventObject);
+const deleteEvents = eventId => axios.delete(`${firebaseUrl}/events/${eventId}.json}`);
+const updateEvents = eventId => axios.put(`${firebaseUrl}/events/${eventId}.json}`);
 
-export default { getEventsByUid, addNewEvents };
+export default {
+  getEventsByUid,
+  addNewEvents,
+  deleteEvents,
+  updateEvents,
+};
