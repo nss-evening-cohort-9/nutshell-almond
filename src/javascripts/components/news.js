@@ -1,19 +1,30 @@
-/* eslint-disable no-trailing-spaces */
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import util from '../helpers/util';
 import newsData from '../helpers/data/newsData';
- 
-const newsStringBuilder = (uid) => {
-  newsData.getNewsByUid(uid).then((news) => {
-    let domString = `<h1>${news.title}</h1>`;
-    domString += `<input type="${news.articleUrl}"/>`;
-    util.printToDom('news', domString);
-  }).catch(err => console.error('could not get news', err));
+
+const newsStringBuilder = (news) => {
+  let domString = '';
+  news.forEach((newz) => {
+    domString += `<h4 class="card-header"> ${newz.title}</h4>`;
+    domString += '<div class="card-body">';
+    domString += '<div class="col-6"</div>';
+    domString += `<h6 class="card-header"><a href=${newz.articleUrl}>${newz.title}</a></h6>`;
+    domString += '<div class="card-body">';
+    // domString += `<div class="btn btn-danger delete-button" id=${newz.uid}>delete</div>`;
+    domString += '</div>';
+    domString += '</div>';
+  });
+  util.printToDom('my-news', domString);
 };
 
 const initNews = () => {
-  newsStringBuilder();
+  document.getElementById('home').classList.add('hide');
+  document.getElementById('news').classList.remove('hide');
+  const { uid } = firebase.auth().currentUser;
+  newsData.getNewsByUid(uid).then((news) => {
+    newsStringBuilder(news);
+  }).catch(err => console.error('could not get news', err));
 };
 
-initNews();
-
-export default { newsStringBuilder };
+export default { initNews };

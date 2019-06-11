@@ -12,7 +12,7 @@ const getNewsByUid = uid => new Promise((resolve, reject) => {
         newsResults[newsId].id = newsId;
         news.push(newsResults[newsId]);
       });
-      resolve(news[0]);
+      resolve(news);
     })
     .catch(err => reject(err));
 });

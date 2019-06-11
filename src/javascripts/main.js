@@ -7,6 +7,7 @@ import MyNavbar from './components/MyNavbar/MyNavbar';
 import authData from './helpers/data/authData';
 
 import apiKeys from './helpers/apiKeys.json';
+import news from './components/news';
 
 import '../styles/main.scss';
 import 'bootstrap';
@@ -23,9 +24,7 @@ const init = () => {
   document.getElementById('events').addEventListener('click', () => {
     console.error('events was clicked');
   });
-  document.getElementById('news').addEventListener('click', () => {
-    console.error('news was clicked');
-  });
+  document.getElementById('news-button').addEventListener('click', news.initNews);
 };
 
 init();
