@@ -9,7 +9,7 @@ import authData from './helpers/data/authData';
 import apiKeys from './helpers/apiKeys.json';
 
 import 'bootstrap';
-import diarys from './components/diarys';
+import diarys from './components/diary/diarys';
 import events from './components/events/events';
 
 import '../styles/main.scss';

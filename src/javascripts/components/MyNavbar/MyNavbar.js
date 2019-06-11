@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 
-import diary from '../diarys';
+import diary from '../diary/diarys';
 import events from '../events/events';
 
 

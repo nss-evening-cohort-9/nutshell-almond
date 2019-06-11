@@ -1,9 +1,9 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-import diarysData from '../helpers/diarysData';
+import diarysData from '../../helpers/diarysData';
 
-import util from '../helpers/util';
+import util from '../../helpers/util';
 
 const diaryStringBuilder = (diarys) => {
   let domString = '';
@@ -28,7 +28,6 @@ const initDiary = () => {
   document.getElementById('events').classList.add('hide');
   const { uid } = firebase.auth().currentUser;
   diarysData.getDiarysByUid(uid).then((diarys) => {
-    console.error(diarys);
     diaryStringBuilder(diarys);
   })
     .catch(err => console.error('no events', err));
