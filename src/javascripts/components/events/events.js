@@ -28,7 +28,6 @@ const initEvents = () => {
   const { uid } = firebase.auth().currentUser;
   eventsData.getEventsByUid(uid)
     .then((events) => {
-      console.error(events);
       displayEvents(events);
     })
     .catch(err => console.error('no events', err));
