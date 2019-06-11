@@ -9,7 +9,7 @@
 <body>
 <!-- Image and text -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" id="navbar-button-home" href="#">
         <img src="../src/assets/screenshots/almond.svg" width="30" height="30" class="d-inline-block align-top" alt="">
         Nutshell Almond
       </a>
@@ -36,8 +36,19 @@
 
   <div id="home" class="hide">
     <div id="diary" class="btn btn-primary">Diary</div>
-    <div id="events" class="btn btn-primary">Events</div>
+    <div id="events-button" class="btn btn-primary">Events</div>
     <div id="news" class="btn btn-primary">News</div>
+  </div>
+
+  <div id="events">
+    <div class="row">
+      <div class="col-5 text-center ">
+        <div id="create-events" ></div>
+      </div>
+      <div class="col-5 offset-2 text-center">
+        <div id="my-events"></div>
+      </div>
+    </div>
   </div>
 
 </body>
