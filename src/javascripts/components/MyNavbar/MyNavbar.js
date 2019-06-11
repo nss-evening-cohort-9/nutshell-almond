@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-import events from '../events';
+import events from '../events/events';
 
 const navbarEvents = () => {
   const navLinks = document.getElementsByClassName('nav-link');

@@ -11,7 +11,7 @@ import apiKeys from './helpers/apiKeys.json';
 import '../styles/main.scss';
 import 'bootstrap';
 
-import events from './components/events';
+import events from './components/events/events';
 
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);

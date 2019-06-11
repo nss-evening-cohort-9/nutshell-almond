@@ -1,8 +1,9 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import eventsData from '../helpers/data/eventsData';
 
-import util from '../helpers/util';
+import eventsData from '../../helpers/data/eventsData';
+
+import util from '../../helpers/util';
 
 const displayEvents = (events) => {
   let domString = '';
@@ -11,8 +12,8 @@ const displayEvents = (events) => {
     domString += '<h3 class="headTitle">My Events</h3>';
     domString += `<h3 class="card-header">${event.name} - ${event.date}</h3>`;
     domString += '<div class="card-body">';
-    domString += `<button class="btn btn-danger delete-events" id=${event.uid}>Delete</button>`;
-    domString += `<button class="btn btn-success edit-events" id=${event.uid}>Edit</button>`;
+    // domString += `<button class="btn btn-danger delete-events" id=${event.uid}>Delete</button>`;
+    // domString += `<button class="btn btn-success edit-events" id=${event.uid}>Edit</button>`;
     domString += '<blockquote class="blockquote mb-0">';
     domString += `<p>${event.description}</p>`;
     domString += `<footer class="blockquote-footer">${event.name}</footer>`;
@@ -27,6 +28,7 @@ const initEvents = () => {
   const { uid } = firebase.auth().currentUser;
   eventsData.getEventsByUid(uid)
     .then((events) => {
+      console.error(events);
       displayEvents(events);
     })
     .catch(err => console.error('no events', err));
