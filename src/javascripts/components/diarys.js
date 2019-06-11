@@ -24,6 +24,8 @@ const diaryStringBuilder = (diarys) => {
 
 const initDiary = () => {
   document.getElementById('diarys').classList.remove('hide');
+  document.getElementById('home').classList.add('hide');
+  document.getElementById('events').classList.add('hide');
   const { uid } = firebase.auth().currentUser;
   diarysData.getDiarysByUid(uid).then((diarys) => {
     console.error(diarys);
