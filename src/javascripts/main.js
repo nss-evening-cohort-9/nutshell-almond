@@ -19,11 +19,9 @@ const init = () => {
   MyNavbar.navbarEvents();
   authData.checkLogInStatus();
   auth.domStringBuilder();
-  diarys.initDiary();
 
-  document.getElementById('diary').addEventListener('click', () => {
-    console.error('diary was clicked');
-  });
+  document.getElementById('diary').addEventListener('click', diarys.initDiary);
+
   document.getElementById('events').addEventListener('click', () => {
     console.error('events was clicked');
   });
