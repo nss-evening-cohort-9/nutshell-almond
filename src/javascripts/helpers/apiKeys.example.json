@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "almondKeys": {
+=======
+  "firebaseKeys": {
+>>>>>>> master
     "apiKey": "",
     "authDomain": "",
     "databaseURL": "",
