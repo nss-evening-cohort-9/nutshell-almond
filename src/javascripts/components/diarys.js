@@ -23,6 +23,7 @@ const diaryStringBuilder = (diarys) => {
 };
 
 const initDiary = () => {
+  document.getElementById('diarys').classList.remove('hide');
   const { uid } = firebase.auth().currentUser;
   diarysData.getDiarysByUid(uid).then((diarys) => {
     console.error(diarys);

@@ -9,6 +9,7 @@ const navbarEvents = () => {
     navLinks[i].addEventListener('click', (e) => {
       if (e.target.id === 'navbar-button-logout') {
         firebase.auth().signOut();
+        // window.location.reload();
       } else if (e.target.id === 'navbar-button-diary') {
         diary.initDiary();
       }
