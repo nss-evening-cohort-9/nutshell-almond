@@ -33,6 +33,8 @@ const initEvents = () => {
     .catch(err => console.error('no events', err));
 
   document.getElementById('home').classList.add('hide');
+  document.getElementById('diarys').classList.add('hide');
+  document.getElementById('events').classList.remove('hide');
 };
 
 export default { initEvents };
