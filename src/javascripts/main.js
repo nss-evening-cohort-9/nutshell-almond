@@ -12,6 +12,8 @@ import news from './components/news';
 import '../styles/main.scss';
 import 'bootstrap';
 
+import events from './components/events/events';
+
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);
   MyNavbar.navbarEvents();
@@ -21,9 +23,7 @@ const init = () => {
   document.getElementById('diary').addEventListener('click', () => {
     console.error('diary was clicked');
   });
-  document.getElementById('events').addEventListener('click', () => {
-    console.error('events was clicked');
-  });
+  document.getElementById('events-button').addEventListener('click', events.initEvents);
   document.getElementById('news-button').addEventListener('click', news.initNews);
 };
 
