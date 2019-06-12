@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import util from '../helpers/util';
 import newsData from '../helpers/data/newsData';
+import util from '../helpers/util';
 
 const newsStringBuilder = (news) => {
   let domString = '';
@@ -24,7 +24,8 @@ const initNews = () => {
   const { uid } = firebase.auth().currentUser;
   newsData.getNewsByUid(uid).then((news) => {
     newsStringBuilder(news);
-  }).catch(err => console.error('could not get news', err));
+  })
+    .catch(err => console.error('could not get news', err));
 };
 
 export default { initNews };
