@@ -4,15 +4,14 @@ import auth from './components/auth/auth';
 
 import MyNavbar from './components/MyNavbar/MyNavbar';
 
-import authData from './helpers/data/authData';
+import authData from './helpers/Data/authData';
 
 import apiKeys from './helpers/apiKeys.json';
 
 import '../styles/main.scss';
 import 'bootstrap';
 
-<<<<<<< HEAD
-import events from './components/events';
+import events from './components/events/events';
 
 // document.getElementById('diary').addEventListener('click', () => {
 //   console.error('diary was clicked');
@@ -25,9 +24,6 @@ import events from './components/events';
 // });
 
 const init = () => {
-  events.initEvents();
-=======
-const init = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);
   MyNavbar.navbarEvents();
   authData.checkLogInStatus();
@@ -36,13 +32,12 @@ const init = () => {
   document.getElementById('diary').addEventListener('click', () => {
     console.error('diary was clicked');
   });
-  document.getElementById('events').addEventListener('click', () => {
-    console.error('events was clicked');
-  });
+
   document.getElementById('news').addEventListener('click', () => {
     console.error('news was clicked');
   });
->>>>>>> master
+
+  document.getElementById('events-button').addEventListener('click', events.initEvents);
 };
 
 init();

@@ -20,6 +20,7 @@ const checkLogInStatus = () => {
       newsNavbar.classList.remove('hide');
       diaryDiv.classList.remove('hide');
       eventsDiv.classList.remove('hide');
+      document.getElementById('events').classList.remove('hide');
     } else {
       authDiv.classList.remove('hide');
       authNavbar.classList.remove('hide');
@@ -28,6 +29,7 @@ const checkLogInStatus = () => {
       newsNavbar.classList.add('hide');
       diaryDiv.classList.add('hide');
       eventsDiv.classList.add('hide');
+      document.getElementById('events').classList.add('hide');
     }
   });
 };

@@ -1,15 +1,18 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-import eventsData from '../events';
+import eventsData from '../../helpers/Data/eventsData';
 
 import util from '../../helpers/util';
 
 
 const deleteEventsEvent = (e) => {
   const eventId = e.target.id;
+  console.error('hey boo', eventId);
   eventsData.deleteEvent(eventId)
-    .then(() => (firebase.auth().currentUser.uid))
+    .then(() => {
+      initEvents(); // eslint-disable-line no-use-before-define
+    })
     .catch(err => console.error('event not deleted', err));
 };
 const addDeleteBtn = () => {
@@ -19,8 +22,6 @@ const addDeleteBtn = () => {
   }
 };
 
-console.error(addDeleteBtn);
-
 const displayEvents = (events) => {
   let domString = '';
   events.forEach((event) => {
@@ -28,7 +29,7 @@ const displayEvents = (events) => {
     domString += '<h3 class="headTitle">My Events</h3>';
     domString += `<h3 class="card-header">${event.name} - ${event.date}</h3>`;
     domString += '<div class="card-body">';
-    domString += `<button class="btn btn-danger delete-events" id=${event.uid}>Delete</button>`;
+    domString += `<button class="btn btn-danger delete-events" id=${event.id}>Delete</button>`;
     // domString += `<button class="btn btn-success edit-events" id=${event.uid}>Edit</button>`;
     domString += '<blockquote class="blockquote mb-0">';
     domString += `<p>${event.description}</p>`;
@@ -38,6 +39,7 @@ const displayEvents = (events) => {
     domString += '</div>';
   });
   util.printToDom('my-events', domString);
+  addDeleteBtn();
 };
 
 const initEvents = () => {
