@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Socially Awkward</title>
 </head>
+
 <body>
 <!-- Image and text -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -16,9 +18,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a id="navbar-button-auth" class="nav-link">Authentication</a>
+          <a id="navbar-button-auth" class="nav-link">Authentication</a>
         </li>
-          <a id ="navbar-button-diary"class="nav-link" href="#">Diary<span class="sr-only">(current)</span></a>
+        <a id="navbar-button-diary" class="nav-link" href="#">Diary<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a id ="navbar-button-events" class="nav-link" href="#">Events</a>
@@ -27,7 +29,7 @@
           <a id ="navbar-button-news" class="nav-link" href="#" tabindex="-1" aria-disabled="true">News</a>
         </li>
         <li class="nav-item">
-            <a id="navbar-button-logout" class="nav-link hide">Logout</a>
+          <a id="navbar-button-logout" class="nav-link hide">Logout</a>
         </li>
       </ul>
     </div>
@@ -38,7 +40,18 @@
 
     <div id="diary" class="btn btn-primary">Diary</div>
     <div id="events-button" class="btn btn-primary">Events</div>
-    <div id="news" class="btn btn-primary">News</div>
+    <div id="news-button" class="btn btn-primary">News</div>
+  </div>
+  
+  <div id="news" class="hide">
+    <div class="row">
+      <div class="col-12">
+        <div id="create-news"></div>
+      </div>
+      <div class="col-12">
+        <div id="my-news"></div>
+      </div>
+    </div>
   </div>
 
   <div id="diarys" class="hide">
@@ -66,4 +79,5 @@
     </div>
   </div>
 </body>
+
 </html>

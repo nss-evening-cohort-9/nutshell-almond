@@ -7,6 +7,7 @@ import MyNavbar from './components/MyNavbar/MyNavbar';
 import authData from './helpers/data/authData';
 
 import apiKeys from './helpers/apiKeys.json';
+import news from './components/news/news';
 
 import 'bootstrap';
 import diarys from './components/diary/diarys';
@@ -19,11 +20,10 @@ const init = () => {
   MyNavbar.navbarEvents();
   authData.checkLogInStatus();
   auth.domStringBuilder();
+
   document.getElementById('diary').addEventListener('click', diarys.initDiary);
-  document.getElementById('news').addEventListener('click', () => {
-    console.error('news was clicked');
-  });
   document.getElementById('events-button').addEventListener('click', events.initEvents);
+  document.getElementById('news-button').addEventListener('click', news.initNews);
 };
 
 init();
