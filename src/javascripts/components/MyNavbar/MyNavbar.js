@@ -1,6 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import news from '../news';
+import news from '../news/news';
 
 import events from '../events/events';
 

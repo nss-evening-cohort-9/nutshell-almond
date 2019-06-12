@@ -7,7 +7,7 @@ import MyNavbar from './components/MyNavbar/MyNavbar';
 import authData from './helpers/data/authData';
 
 import apiKeys from './helpers/apiKeys.json';
-import news from './components/news';
+import news from './components/news/news';
 
 import '../styles/main.scss';
 import 'bootstrap';

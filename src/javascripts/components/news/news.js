@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import newsData from '../helpers/data/newsData';
-import util from '../helpers/util';
+import newsData from '../../helpers/data/newsData';
+import util from '../../helpers/util';
 
 const newsStringBuilder = (news) => {
   let domString = '';
