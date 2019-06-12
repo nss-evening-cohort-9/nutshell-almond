@@ -1,10 +1,8 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-
 import diary from '../diary/diarys';
 import events from '../events/events';
-
 
 const navbarEvents = () => {
   const navLinks = document.getElementsByClassName('nav-link');

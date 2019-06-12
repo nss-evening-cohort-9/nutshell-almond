@@ -19,7 +19,6 @@ const diaryStringBuilder = (diarys) => {
     domString += '</div>';
   });
   util.printToDom('my-diarys', domString);
-  //  need to make addDiarys() here
 };
 
 const initDiary = () => {
@@ -30,7 +29,7 @@ const initDiary = () => {
   diarysData.getDiarysByUid(uid).then((diarys) => {
     diaryStringBuilder(diarys);
   })
-    .catch(err => console.error('no events', err));
+    .catch(err => console.error('no diarys', err));
 };
 
 export default { initDiary };
