@@ -5,16 +5,21 @@ import eventsData from '../events';
 
 import util from '../../helpers/util';
 
-const deleteEvents = document.getElementsByClassName('delete-events');
 
-// const deleteEventsEvent = (e) => {
-//   const eventId = e.target.id;
-//   eventsData.deleteEvent(eventId)
-//     .then(() => (firebase.auth().currentUser.uid))
-//     .catch(err => console.error('no-deletion', err));
-// };
+const deleteEventsEvent = (e) => {
+  const eventId = e.target.id;
+  eventsData.deleteEvent(eventId)
+    .then(() => (firebase.auth().currentUser.uid))
+    .catch(err => console.error('event not deleted', err));
+};
+const addDeleteBtn = () => {
+  const deleteButton = document.getElementsByClassName('delete-events');
+  for (let i = 0; i < deleteButton.length; i += 1) {
+    deleteButton[i].addEventListener('click', deleteEventsEvent);
+  }
+};
 
-deleteEvents.addEventListener('click', deleteEventsEvent);
+console.error(addDeleteBtn);
 
 const displayEvents = (events) => {
   let domString = '';
