@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-import diarysData from '../../helpers/diarysData';
+import diarysData from '../../helpers/data/diarysData';
 
 import util from '../../helpers/util';
 
