@@ -18,4 +18,6 @@ const getEventsByUid = uid => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
-export default { getEventsByUid };
+const deleteEvent = eventId => axios.delete(`${firebaseUrl}/events/${eventId}.json`);
+
+export default { getEventsByUid, deleteEvent };
