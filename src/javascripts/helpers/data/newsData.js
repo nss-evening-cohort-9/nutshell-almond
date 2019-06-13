@@ -1,10 +1,10 @@
-import Axios from 'axios';
+import axios from 'axios';
 import apiKeys from '../apiKeys.json';
 
 const firebaseUrl = apiKeys.firebaseKeys.databaseURL;
 
 const getNewsByUid = uid => new Promise((resolve, reject) => {
-  Axios.get(`${firebaseUrl}/news.json?orderBy="uid"&equalTo="${uid}"`)
+  axios.get(`${firebaseUrl}/news.json?orderBy="uid"&equalTo="${uid}"`)
     .then((results) => {
       const newsResults = results.data;
       const news = [];
@@ -17,5 +17,6 @@ const getNewsByUid = uid => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
+const deleteNews = newsId => axios.delete(`${firebaseUrl}/news/${newsId}.json`);
 
-export default { getNewsByUid };
+export default { getNewsByUid, deleteNews };
