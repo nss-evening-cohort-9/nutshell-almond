@@ -1,9 +1,23 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-import diarysData from '../../helpers/diarysData';
+import diarysData from '../../helpers/data/diarysData';
 
 import util from '../../helpers/util';
+
+const deleteDiary = (e) => {
+  const diaryId = e.target.id;
+  diarysData.deleteDiary(diaryId)
+    .then(() => initDiary(firebase.auth().currentUser.uid)) // eslint-disable-line no-use-before-define
+    .catch(err => console.error('no deletion', err));
+};
+
+const addEvents = () => {
+  const deleteButtons = document.getElementsByClassName('delete-diary');
+  for (let i = 0; i < deleteButtons.length; i += 1) {
+    deleteButtons[i].addEventListener('click', deleteDiary);
+  }
+};
 
 const diaryStringBuilder = (diarys) => {
   let domString = '';
@@ -12,13 +26,14 @@ const diaryStringBuilder = (diarys) => {
     domString += '<div class="card-body">';
     domString += '<blockquote class="blockquote mb-0">';
     domString += `<p>${diary.title}</p>`;
-    // domString += `<div class="btn btn-danger delete-button" id=${diary.uid}>Delete</div>`;
+    domString += `<div class="btn btn-danger delete-diary" id=${diary.id}>Delete</div>`;
     domString += `<footer class="blockquote-footer">${diary.entry}</footer>`;
     domString += '</blockquote>';
     domString += '</div>';
     domString += '</div>';
   });
   util.printToDom('my-diarys', domString);
+  addEvents();
 };
 
 const initDiary = () => {
@@ -32,4 +47,4 @@ const initDiary = () => {
     .catch(err => console.error('no diarys', err));
 };
 
-export default { initDiary };
+export default { initDiary, deleteDiary };

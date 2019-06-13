@@ -19,11 +19,11 @@ const checkLogInStatus = () => {
       logoutNavbar.classList.remove('hide');
       homeDiv.classList.remove('hide');
       newsButton.classList.remove('hide');
-      diaryDiv.classList.remove('hide');
+      diaryDiv.classList.add('hide');
       newsButton.classList.remove('hide');
       diaryButton.classList.remove('hide');
-      eventsDiv.classList.remove('hide');
-      newsDiv.classList.remove('hide');
+      eventsDiv.classList.add('hide');
+      newsDiv.classList.add('hide');
     } else {
       authDiv.classList.remove('hide');
       authNavbar.classList.remove('hide');

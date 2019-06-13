@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import apiKeys from './apiKeys.json';
+import apiKeys from '../apiKeys.json';
 
 const firebaseUrl = apiKeys.firebaseKeys.databaseURL;
 
@@ -18,7 +18,6 @@ const getDiarysByUid = uid => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
+const deleteDiary = diaryId => axios.delete(`${firebaseUrl}/diarys/${diaryId}.json`);
 
-const addNewDiarys = myDiarys => axios.post(`${firebaseUrl}/events.json`, myDiarys);
-
-export default { getDiarysByUid, addNewDiarys };
+export default { getDiarysByUid, deleteDiary };
