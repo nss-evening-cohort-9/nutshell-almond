@@ -14,11 +14,57 @@ const deleteEventsEvent = (e) => {
     .catch(err => console.error('not deleted', err));
 };
 
-const addDeleteBtn = () => {
+const addEvents = (e) => {
+  e.preventDefault();
+  const newEvent = {
+    location: document.getElementById('event-location').value,
+    description: document.getElementById('event-description').value,
+    uid: firebase.auth().currentUser.uid,
+    name: document.getElementById('event-name').value,
+    date: document.getElementById('event-date').value,
+  };
+  eventsData.addEvent(newEvent)
+    .then(() => {
+      document.getElementById('event-location').value = '';
+      document.getElementById('event-description').value = '';
+      document.getElementById('event-name').value = '';
+      document.getElementById('event-date').value = '';
+      initEvents(firebase.auth().currentUser.uid); // eslint-disable-line no-use-before-define
+    })
+    .catch(err => console.error('no new events posted', err));
+};
+
+const addAllEvents = () => {
   const deleteButton = document.getElementsByClassName('delete-events');
   for (let i = 0; i < deleteButton.length; i += 1) {
     deleteButton[i].addEventListener('click', deleteEventsEvent);
   }
+  document.getElementById('save-event').addEventListener('click', addEvents);
+};
+
+const addEventsDomStringBuilder = () => {
+  let domString = '';
+
+  domString += '<form>';
+  domString += '<div class="form-group">';
+  domString += '<label for="event-name">Event Name</label>';
+  domString += '<input type="eventName" class="form-control" id="event-name" placeholder="Enter event name">';
+  domString += '</div>';
+  domString += '<div class="form-group">';
+  domString += '<label for="event-location">Location</label>';
+  domString += '<input type="location" class="form-control" id="event-location" placeholder="Enter event location">';
+  domString += '</div>';
+  domString += '<div class="form-group">';
+  domString += '<label for="event-date">Date</label>';
+  domString += '<input type="text" class="form-control" id="event-date" placeholder="Enter event date">';
+  domString += '</div>';
+  domString += '<div class="form-group">';
+  domString += '<label for="event-description">Description</label>';
+  domString += '<textarea class="form-control" id="event-description" rows="3"></textarea>';
+  domString += '</div>';
+  domString += '<button type="submit" class="btn btn-primary mb-2" id="save-event">Create Event</button>';
+  domString += '</form>';
+  util.printToDom('create-events', domString);
 };
 
 const displayEvents = (events) => {
@@ -38,10 +84,12 @@ const displayEvents = (events) => {
     domString += '</div>';
   });
   util.printToDom('my-events', domString);
-  addDeleteBtn();
+  addAllEvents();
 };
 
 const initEvents = () => {
+  addEventsDomStringBuilder();
+
   const { uid } = firebase.auth().currentUser;
   eventsData.getEventsByUid(uid)
     .then((events) => {
