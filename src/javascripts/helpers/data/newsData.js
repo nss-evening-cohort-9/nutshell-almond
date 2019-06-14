@@ -17,6 +17,8 @@ const getNewsByUid = uid => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
+const addNews = newsObject => axios.post(`${firebaseUrl}/news.json`, newsObject);
+
 const deleteNews = newsId => axios.delete(`${firebaseUrl}/news/${newsId}.json`);
 
-export default { getNewsByUid, deleteNews };
+export default { getNewsByUid, deleteNews, addNews };
