@@ -11,7 +11,6 @@ const deleteNewsEvent = (e) => {
     .catch(err => console.error('no delete for you', err));
 };
 
-
 const addNews = (e) => {
   e.preventDefault();
   const newNews = {
@@ -27,7 +26,6 @@ const addNews = (e) => {
     })
     .catch(err => console.error('no new event for you', err));
 };
-
 
 const addAllNews = () => {
   const deleteButton = document.getElementsByClassName('delete-news');
