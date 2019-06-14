@@ -45,6 +45,7 @@ const addAllEvents = () => {
 const addEventsDomStringBuilder = () => {
   let domString = '';
 
+  domString += '<h3 class="headTitle">New Eventç</h3>';
   domString += '<form>';
   domString += '<div class="form-group">';
   domString += '<label for="event-name">Event Name</label>';
@@ -69,10 +70,10 @@ const addEventsDomStringBuilder = () => {
 
 const displayEvents = (events) => {
   let domString = '';
+  domString += '<h3 class="headTitle">My Events</h3>';
   events.forEach((event) => {
     domString += '<div class="card text-center">';
-    domString += '<h3 class="headTitle">My Events</h3>';
-    domString += `<h3 class="card-header">${event.name} - ${event.date}</h3>`;
+    domString += `<h5 class="card-header">${event.name} - ${event.date}</h5>`;
     domString += '<div class="card-body">';
     domString += `<button class="btn btn-danger delete-events" id=${event.id}>Delete</button>`;
     // domString += `<button class="btn btn-success edit-events" id=${event.uid}>Edit</button>`;
@@ -82,6 +83,7 @@ const displayEvents = (events) => {
     domString += '</blockquote>';
     domString += '</div>';
     domString += '</div>';
+    domString += '<br>';
   });
   util.printToDom('my-events', domString);
   addAllEvents();
