@@ -45,7 +45,7 @@ const addAllEvents = () => {
 const addEventsDomStringBuilder = () => {
   let domString = '';
 
-  domString += '<h3 class="headTitle">New Eventç</h3>';
+  domString += '<h3 class="headTitle">New Events</h3>';
   domString += '<form>';
   domString += '<div class="form-group">';
   domString += '<label for="event-name">Event Name</label>';
