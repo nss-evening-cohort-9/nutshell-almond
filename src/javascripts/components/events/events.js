@@ -14,7 +14,6 @@ const deleteEventsEvent = (e) => {
     .catch(err => console.error('not deleted', err));
 };
 
-
 const addEvents = (e) => {
   e.preventDefault();
   const newEvent = {
