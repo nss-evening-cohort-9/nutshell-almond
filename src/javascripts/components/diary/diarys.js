@@ -61,18 +61,20 @@ const addDiaryDomStringBuilder = () => {
 const diaryStringBuilder = (diarys) => {
   let domString = '';
   diarys.forEach((diary) => {
-    domString += `<h2 class="card-header"> ${diary.date}</h2>`;
     domString += '<div class="card-body">';
+    domString += `<h2 class="card-header"> ${diary.date}</h2>`;
     domString += '<blockquote class="blockquote mb-0">';
     domString += `<p>${diary.title}</p>`;
-    domString += `<div class="btn btn-danger delete-diary" id=${diary.id}>Delete</div>`;
     domString += `<footer class="blockquote-footer">${diary.entry}</footer>`;
+    domString += `<div class="btn btn-danger delete-diary" id=${diary.id}>Delete</div>`;
+    domString += `<div class="btn btn-link edit-diary" id=${diary.id}>edit</div>`;
     domString += '</blockquote>';
     domString += '</div>';
     domString += '</div>';
   });
   util.printToDom('my-diarys', domString);
   addAllDiarys();
+  // editDiarysEvent();
 };
 
 const initDiary = () => {
