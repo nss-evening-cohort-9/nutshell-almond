@@ -2,6 +2,7 @@
 
 body {
   background-color: lightgrey;
+  margin: 7px;
 }
 
 #signup-login {
@@ -12,4 +13,8 @@ body {
 
 .hide {
   display: none;
+}
+
+.edit-event, .delete-events {
+ margin: 0 15px 0 15px;
 }
