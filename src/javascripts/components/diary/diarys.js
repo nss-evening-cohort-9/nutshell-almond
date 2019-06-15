@@ -15,16 +15,16 @@ const deleteDiaryEvent = (e) => {
 const addDiary = (e) => {
   e.preventDefault();
   const newDiary = {
-    // entry: document.getElementById('entry').value,
-    title: document.getElementById('title').value,
-    date: document.getElementById('date').value,
+    entry: document.getElementById('diary-entry').value,
+    title: document.getElementById('diary-title').value,
+    date: document.getElementById('diary-date').value,
     uid: firebase.auth().currentUser.uid,
   };
   diarysData.addDiary(newDiary)
     .then(() => {
-      // document.getElementById('entry').value = '';
-      document.getElementById('title').value = '';
-      document.getElementById('date').value = '';
+      document.getElementById('diary-entry').value = '';
+      document.getElementById('diary-title').value = '';
+      document.getElementById('diary-date').value = '';
       initDiary(firebase.auth().currentUser.uid); // eslint-disable-line no-use-before-define
     })
     .catch(err => console.error('no new event for you', err));
@@ -51,7 +51,7 @@ const addDiaryDomStringBuilder = () => {
   domString += '</div>';
   domString += '<div class="form-group">';
   domString += '<label for="diary-description">Description</label>';
-  domString += '<textarea class="form-control" id="dairy-entry" rows="3"></textarea>';
+  domString += '<textarea class="form-control" id="diary-entry" rows="3"></textarea>';
   domString += '</div>';
   domString += '<button type="submit" class="btn btn-primary mb-2" id="save-diary">Create diary</button>';
   domString += '</form>';
