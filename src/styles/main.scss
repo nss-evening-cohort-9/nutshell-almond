@@ -18,3 +18,9 @@ body {
 .edit-event, .delete-events {
  margin: 0 15px 0 15px;
 }
+
+#create-events, #my-events {
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 20px;
+}

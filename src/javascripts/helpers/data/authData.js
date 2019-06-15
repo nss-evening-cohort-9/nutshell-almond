@@ -35,6 +35,7 @@ const checkLogInStatus = () => {
       newsDiv.classList.add('hide');
       newsButton.classList.add('hide');
       diaryButton.classList.add('hide');
+      document.getElementById('events').classList.add('hide');
     }
   });
 };

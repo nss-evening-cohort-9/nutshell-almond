@@ -62,12 +62,13 @@ const editEventsDomStringBuilder = (event) => {
   domString += '</div>';
   domString += '<div class="form-group">';
   domString += '<label for="event-description">Description</label>';
-  domString += `<input type="text" value="${event.data.description}" class="form-control" id="event-description" placeholder="Enter event description" rows="3"></input>`;
+  domString += `<textarea type="text" value="${event.data.description}" class="form-control" id="event-description" placeholder="Enter event description" rows="3"></textarea>`;
   domString += '</div>';
   domString += '<button type="submit" class="btn btn-primary mb-2" id="save-event">Update Event</button>';
   domString += '</form>';
   util.printToDom('create-events', domString);
   updateAllEvents(); // eslint-disable-line no-use-before-define
+  console.error(event);
 };
 
 
@@ -87,13 +88,13 @@ const editEvents = () => {
     name: document.getElementById('event-name').value,
     date: document.getElementById('event-date').value,
   };
-  eventsData.updateEvents(newEvent)
+  eventsData.updateEvents(id, newEvent)
     .this(() => {
       document.getElementById('event-location').value = '';
       document.getElementById('event-description').value = '';
       document.getElementById('event-name').value = '';
       document.getElementById('event-date').value = '';
-      initEvents(firebase.auth().currentUser.uid); // eslint-disable-line no-use-before-define
+      initEvents(); // eslint-disable-line no-use-before-define
     })
     .catch(err => console.error('did not update', err));
 };
@@ -103,8 +104,8 @@ const updateAllEvents = () => {
   const editButton = document.getElementsByClassName('edit-events');
   for (let i = 0; i < editButton.length; i += 1) {
     editButton[i].addEventListener('click', editEventsEvent);
+    editButton.id[i].addEventListener('click', editEvents);
   }
-  document.getElementById('save-event').addEventListener('click', editEvents);
   document.getElementById('edit-events').classList.remove('hide');
 };
 
