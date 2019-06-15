@@ -40,13 +40,79 @@ const addAllEvents = () => {
     deleteButton[i].addEventListener('click', deleteEventsEvent);
   }
   document.getElementById('save-event').addEventListener('click', addEvents);
+  document.getElementById('create-events').classList.remove('hide');
+  document.getElementById('edit-events').classList.add('hide');
+};
+
+const editEventsDomStringBuilder = (event) => {
+  let domString = '';
+  domString += '<h3 class="headTitle">Update Events</h3>';
+  domString += '<form action="" method="">';
+  domString += '<div class="form-group">';
+  domString += '<label for="event-name">Event Name</label>';
+  domString += `<input type="eventName" value="${event.data.name}" class="form-control" id="event-name" placeholder="Enter event name">`;
+  domString += '</div>';
+  domString += '<div class="form-group">';
+  domString += '<label for="event-location">Location</label>';
+  domString += `<input type="location" value="${event.data.location}" class="form-control" id="event-location" placeholder="Enter event location">`;
+  domString += '</div>';
+  domString += '<div class="form-group">';
+  domString += '<label for="event-date">Date</label>';
+  domString += `<input type="text" value="${event.data.date}" class="form-control" id="event-date" placeholder="Enter event date">`;
+  domString += '</div>';
+  domString += '<div class="form-group">';
+  domString += '<label for="event-description">Description</label>';
+  domString += `<input type="text" value="${event.data.description}" class="form-control" id="event-description" placeholder="Enter event description" rows="3"></input>`;
+  domString += '</div>';
+  domString += '<button type="submit" class="btn btn-primary mb-2" id="save-event">Update Event</button>';
+  domString += '</form>';
+  util.printToDom('create-events', domString);
+  updateAllEvents(); // eslint-disable-line no-use-before-define
+};
+
+
+const editEventsEvent = (e) => {
+  const eventId = e.target.id;
+  eventsData.getEventById(eventId)
+    .then((eventObj) => {
+      editEventsDomStringBuilder(eventObj);
+    })
+    .catch(err => console.error('no events edited', err));
+};
+const editEvents = () => {
+  const newEvent = {
+    location: document.getElementById('event-location').value,
+    description: document.getElementById('event-description').value,
+    uid: firebase.auth().currentUser.uid,
+    name: document.getElementById('event-name').value,
+    date: document.getElementById('event-date').value,
+  };
+  eventsData.updateEvents(newEvent)
+    .this(() => {
+      document.getElementById('event-location').value = '';
+      document.getElementById('event-description').value = '';
+      document.getElementById('event-name').value = '';
+      document.getElementById('event-date').value = '';
+      initEvents(firebase.auth().currentUser.uid); // eslint-disable-line no-use-before-define
+    })
+    .catch(err => console.error('did not update', err));
+};
+
+
+const updateAllEvents = () => {
+  const editButton = document.getElementsByClassName('edit-events');
+  for (let i = 0; i < editButton.length; i += 1) {
+    editButton[i].addEventListener('click', editEventsEvent);
+  }
+  document.getElementById('save-event').addEventListener('click', editEvents);
+  document.getElementById('edit-events').classList.remove('hide');
 };
 
 const addEventsDomStringBuilder = () => {
   let domString = '';
 
   domString += '<h3 class="headTitle">New Events</h3>';
-  domString += '<form>';
+  domString += '<form action="" method="POST">';
   domString += '<div class="form-group">';
   domString += '<label for="event-name">Event Name</label>';
   domString += '<input type="eventName" class="form-control" id="event-name" placeholder="Enter event name">';
@@ -63,7 +129,7 @@ const addEventsDomStringBuilder = () => {
   domString += '<label for="event-description">Description</label>';
   domString += '<textarea class="form-control" id="event-description" rows="3"></textarea>';
   domString += '</div>';
-  domString += '<button type="submit" class="btn btn-primary mb-2" id="save-event">Create Event</button>';
+  domString += '<button type="submit" class="btn btn-success mb-2" id="save-event">Create Event</button>';
   domString += '</form>';
   util.printToDom('create-events', domString);
 };
@@ -75,18 +141,17 @@ const displayEvents = (events) => {
     domString += '<div class="card text-center">';
     domString += `<h5 class="card-header">${event.name} - ${event.date}</h5>`;
     domString += '<div class="card-body">';
-    domString += `<button class="btn btn-danger delete-events" id=${event.id}>Delete</button>`;
-    // domString += `<button class="btn btn-success edit-events" id=${event.uid}>Edit</button>`;
     domString += '<blockquote class="blockquote mb-0">';
     domString += `<p>${event.description}</p>`;
-    domString += `<footer class="blockquote-footer">${event.name}</footer>`;
-    domString += '</blockquote>';
+    domString += `<button class="btn btn-danger delete-events" id=${event.id}>Delete</button>`;
+    domString += `<button class="btn btn-success edit-events" id=${event.id}>Edit</button>`;
     domString += '</div>';
     domString += '</div>';
     domString += '<br>';
   });
   util.printToDom('my-events', domString);
   addAllEvents();
+  updateAllEvents();
 };
 
 const initEvents = () => {
