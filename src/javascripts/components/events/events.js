@@ -68,7 +68,6 @@ const editEventsDomStringBuilder = (event) => {
   domString += '</form>';
   util.printToDom('create-events', domString);
   updateAllEvents(); // eslint-disable-line no-use-before-define
-  console.error(event);
 };
 
 
@@ -88,7 +87,7 @@ const editEvents = () => {
     name: document.getElementById('event-name').value,
     date: document.getElementById('event-date').value,
   };
-  eventsData.updateEvents(id, newEvent)
+  eventsData.updateEvents(newEvent)
     .this(() => {
       document.getElementById('event-location').value = '';
       document.getElementById('event-description').value = '';
@@ -104,8 +103,8 @@ const updateAllEvents = () => {
   const editButton = document.getElementsByClassName('edit-events');
   for (let i = 0; i < editButton.length; i += 1) {
     editButton[i].addEventListener('click', editEventsEvent);
-    editButton.id[i].addEventListener('click', editEvents);
   }
+  document.getElementById('save-event').addEventListener('click', editEvents);
   document.getElementById('edit-events').classList.remove('hide');
 };
 
