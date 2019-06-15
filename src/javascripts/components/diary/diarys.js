@@ -15,14 +15,14 @@ const deleteDiaryEvent = (e) => {
 const addDiary = (e) => {
   e.preventDefault();
   const newDiary = {
-    entry: document.getElementById('entry').value,
+    // entry: document.getElementById('entry').value,
     title: document.getElementById('title').value,
     date: document.getElementById('date').value,
     uid: firebase.auth().currentUser.uid,
   };
   diarysData.addDiary(newDiary)
     .then(() => {
-      document.getElementById('entry').value = '';
+      // document.getElementById('entry').value = '';
       document.getElementById('title').value = '';
       document.getElementById('date').value = '';
       initDiary(firebase.auth().currentUser.uid); // eslint-disable-line no-use-before-define
